@@ -14,7 +14,7 @@ const ConverterForm = () => {
     useEffect(() => getExchangeRate, [])
 
     const getExchangeRate = async () => {
-        const API_KEY = "a3b7b2afff5c6d38d09ce79e";
+        const API_KEY = process.env.REACT_APP_API_KEY;
         const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}`;
         try {
             const response = await fetch(API_URL);
